@@ -10,6 +10,7 @@ class User(models.Model):
     email = models.EmailField('邮件地址',unique=True)
     c_time = models.DateTimeField('创建时间',auto_now_add=True)
     has_confirmed = models.BooleanField('是否邮件确认',default=False)
+    in_office = models.BooleanField('是否在职', default=True)
 
     def __str__(self):
         return self.name

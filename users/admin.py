@@ -4,10 +4,10 @@ from users import models
 class UserAdmin(admin.ModelAdmin):
 
     '''设置列表可显示的字段'''
-    list_display = ('name', 'password', 'email','has_confirmed','c_time')
+    list_display = ('name', 'password', 'email','has_confirmed','c_time','in_office')
 
     '''设置过滤选项'''
-    list_filter = ('has_confirmed',)
+    list_filter = ('has_confirmed','in_office')
 
     '''每页显示条目数'''
     list_per_page = 20

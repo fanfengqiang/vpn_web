@@ -68,6 +68,10 @@ def login(request):
                 message = '该用户还未经过邮件确认！'
                 return render(request, 'login.html', locals())
 
+            if not user.in_office:
+                message = '该用户已离职！'
+                return render(request, 'login.html', locals())
+
             if user.password == password:
                 request.session['is_login'] = True
                 request.session['user_id'] = user.id
